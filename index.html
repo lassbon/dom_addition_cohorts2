@@ -1,0 +1,60 @@
+
+
+<html lang="en">
+
+    <head> 
+        
+        <title>DOM</title>
+        <script>
+
+           function validate(params){
+            if(params.length == 0){
+                return false
+            }else{
+                return true
+            }
+           }
+
+            function sayHello() {
+                let username = document.getElementById("username").value
+                let firstname = document.getElementById("firstname").value
+                let lastname = document.getElementById("lastname").value
+                let age = document.getElementById("age").value
+
+                if(validate(username) == false || validate(firstname) == false || validate(lastname) == false  ){
+                    alert("All the fields are mandatory ")
+                }else{
+
+                    document.getElementById("result").innerHTML = `Welcome ${username} \n Your details are: Firstname: ${firstname}`
+                }
+            }
+
+            function clickMe(){
+                document.getElementById("clickMeBtn").innerHTML= "Chai, i got clicked"
+            }
+            
+
+        </script>
+    </head>
+
+    <body> 
+
+        <h1>Welcome to DOM class</h1>
+            <h1 id="welcome_1"> Welcome to JS DOm classes </h1>
+            Username: <input type="text" id="username" placeholder="Your username please"  />
+            Firstname: <input type="text" id="firstname" placeholder="Your fisrtname please"  />
+            Lastname: <input type="text" id="lastname" placeholder="Your lastname please"  />
+            Age: <input type="number"  min='1'  id="age" placeholder="Your age please"  />
+            <button onclick="sayHello()">Greet</button>
+                <br /><br />
+
+            <div id="result"></div>
+
+            <br />
+
+            <button id="clickMeBtn" onclick="clickMe()">Click me</button>
+     
+    </body>
+
+
+</html>
